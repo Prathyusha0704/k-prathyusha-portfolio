@@ -14,7 +14,7 @@ const description =
 export const metadata: Metadata = {
   title: "K Prathyusha | Computer Science Engineer | Software Developer",
   description,
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://k-prathyusha-portfolio.vercel.app"),
   alternates: { canonical: "/" },
   openGraph: {
     title: "K Prathyusha | Computer Science Engineer | Software Developer",
