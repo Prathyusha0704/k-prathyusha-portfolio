@@ -276,3 +276,256 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transition-duration: .01ms !important;
   }
 }
+/* Targeted mobile refinements */
+@media (max-width: 780px) {
+  /*
+   * Use visual order on mobile only. Desktop section order stays unchanged.
+   * Keep the semantic content in the page; no information is removed.
+   */
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main > #home { order: 0; }
+  main > #about { order: 1; }
+  main > #skills { order: 2; }
+  main > #experience { order: 3; }
+  main > #projects { order: 4; }
+  main > #education { order: 5; }
+  main > #certifications { order: 6; }
+  main > #research { order: 7; }
+  main > #contact { order: 8; }
+
+  /* Avoid narrow-screen overflow from long words or wide content. */
+  body {
+    overflow-x: hidden;
+  }
+
+  main > section {
+    min-width: 0;
+    scroll-margin-top: 76px;
+  }
+
+  .hero {
+    padding-top: 112px;
+    padding-bottom: 70px;
+    gap: 26px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(36px, 8.5vw, 54px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-copy,
+  .hero-secondary {
+    max-width: 58ch;
+  }
+
+  .status {
+    max-width: 100%;
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-actions .button {
+    min-height: 48px;
+  }
+
+  .hero-meta {
+    gap: 10px 18px;
+    line-height: 1.6;
+  }
+
+  .code-window {
+    max-width: 100%;
+    transform: none;
+  }
+
+  .code-body {
+    overflow-x: auto;
+  }
+
+  .section {
+    padding-block: 64px;
+  }
+
+  .section-title {
+    margin-bottom: 28px;
+  }
+
+  .about-grid,
+  .contact-grid {
+    min-width: 0;
+  }
+
+  .skill-card {
+    min-height: 0;
+  }
+
+  .project-card,
+  .experience-card,
+  .education-card,
+  .cert-card,
+  .research-card,
+  .contact-form {
+    min-width: 0;
+  }
+
+  .project-content h3,
+  .cert-card h3,
+  .education-main h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .project-links {
+    gap: 12px;
+  }
+
+  .project-links a,
+  .cert-link,
+  .social-row a {
+    min-height: 40px;
+  }
+
+  .contact-info strong {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 560px) {
+  .shell {
+    width: calc(100% - 32px);
+  }
+
+  .hero {
+    padding-top: 104px;
+    padding-bottom: 66px;
+  }
+
+  .hero-kicker {
+    margin-top: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 9vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -.055em;
+  }
+
+  .hero-copy {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .hero-secondary {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .text-link {
+    min-height: 44px;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  .highlights,
+  .skill-grid,
+  .project-grid,
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-featured {
+    display: block;
+  }
+
+  .project-featured .project-visual {
+    min-height: 210px;
+  }
+
+  .project-content {
+    padding: 18px;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .experience-top {
+    gap: 12px;
+  }
+
+  .date-pill {
+    max-width: 100%;
+    line-height: 1.5;
+  }
+
+  .research-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .research-card > .button {
+    grid-column: auto;
+    justify-self: start;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+}
+
+/* Extra guard for the narrowest supported screens. */
+@media (max-width: 360px) {
+  .shell {
+    width: calc(100% - 28px);
+  }
+
+  .status {
+    align-items: flex-start;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-meta {
+    display: grid;
+  }
+
+  .education-card {
+    padding: 16px 12px;
+  }
+
+  .project-content {
+    padding: 16px;
+  }
+}
+
